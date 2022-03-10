@@ -50,7 +50,7 @@ public class Catalogue {
 
         public Item[] getAvailableItems() {
         int objectsArraySize = 0;
-            for (int i = 0; (itemCount) >= i; i++) {
+            for (int i = 0; (itemCount-1) >= i; i++) {
                 if (objectList[i] != null) {
                     ++objectsArraySize;
                 }
@@ -66,12 +66,21 @@ public class Catalogue {
 
     public Item findItem(String searchword){
         for (int i = 0; i < objectList.length; i++) {
-            if(objectList[i].toString().equals(searchword)){
-                System.out.println(objectList[i]);
-                return ;
+            if(objectList[i] != null && objectList[i].getCategory().equals(searchword)){
+                return objectList[i];
             }
         }
         return null;
+    }
+
+    public void borrowItem(Item object){
+            object.setAvailable(false);
+        System.out.println("Produktet: " + object + " er lånt.");
+    }
+
+    public void returnItem(Item object){
+        object.setAvailable(true);
+        System.out.println("Produktet: " + object + " er returneret.");
     }
 
     //Getter

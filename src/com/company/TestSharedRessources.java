@@ -56,16 +56,14 @@ public class TestSharedRessources {
         } else if (choice == 4) { // make item unavailable
             // Hardcoded search criteria Skateboard
             Item found = catalogue.findItem("Skateboard");
-            //catalogue.borrowItem(found);
-        } /*else if (choice == 5) { // make item available again
+            catalogue.borrowItem(found);
+        } else if (choice == 5) { // make item available again
             // Hardcoded search criteria Skateboard
             Item found = catalogue.findItem("Skateboard");
             catalogue.returnItem(found);
         } else { // invalid choice
             System.out.println("Du foretog et ugyldigt valg.");
         }
-
- */
         }
     }
 

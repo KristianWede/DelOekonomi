@@ -9,6 +9,7 @@ public class Item {
     public Item(String description, String category) {
         this.description = description;
         this.category = category;
+        this.available = true;
     }
 
     //Getter
@@ -26,5 +27,9 @@ public class Item {
 
     public String toString(){
         return category + " " + description;
+    }
+
+    public void setAvailable(boolean available) {
+        this.available = available;
     }
 }
