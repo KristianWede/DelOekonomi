@@ -2,7 +2,7 @@ package com.company;
 
 public class Item {
 
-    private boolean available = true;
+    private boolean available;
     private String description;
     private String category;
 
@@ -22,5 +22,9 @@ public class Item {
 
     public String getCategory() {
         return category;
+    }
+
+    public String toString(){
+        return category + " " + description;
     }
 }
