@@ -5,11 +5,13 @@ public class Item {
     private boolean available;
     private String description;
     private String category;
+    private boolean setAvailable;
 
     public Item(String description, String category) {
         this.description = description;
         this.category = category;
         this.available = true;
+        this.setAvailable = true;
     }
 
     //Getter
@@ -29,7 +31,7 @@ public class Item {
         return category + " " + description;
     }
 
-    public void setAvailable(boolean available) {
-        this.available = available;
+    public void setAvailable(boolean b) {
+        
     }
 }
