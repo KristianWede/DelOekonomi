@@ -58,6 +58,6 @@ public class Catalogue {
 
     //Getter
     public int getCount() {
-        return itemCount;
+        return productCount;
     }
 }

@@ -7,7 +7,7 @@ public class Item {
     private String category;
     private boolean setAvailable;
 
-    public Item(String description, String category) {
+    public Item(String category, String description) {
         this.description = description;
         this.category = category;
         this.available = true;

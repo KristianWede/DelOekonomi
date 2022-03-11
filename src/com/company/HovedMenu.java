@@ -42,7 +42,11 @@ public class HovedMenu {
             if (choice == 1) { // get all items in cataloque
                 Item[] allItems = catalogue.getFullList();
                 for (int i = 0; i < allItems.length; i++) {
-                    System.out.println(allItems[i]);
+                    if ( allItems[i] == null){
+                        System.out.println("Pladsen er tom.");
+                    } else {
+                        System.out.println(allItems[i]);
+                    }
                 }
 
             } else if (choice == 2) { // get available items in cataloque
@@ -59,12 +63,16 @@ public class HovedMenu {
                 System.out.print("Indtast beskrivelse: ");
                 String addingDesc = scanner.next();
                 catalogue.addItem(new Item(addingCat,addingDesc));
-                System.out.println("Objekt: " +addingCat + " " + addingDesc + " tilføjet til " + catalogue.getCount());
+                System.out.println("Objekt: " +addingDesc + " " + addingCat + " tilføjet til " + catalogue.getCount());
 
             } else if (choice == 4) { // make item unavailable
                 // Hardcoded search criteria Skateboard
-                Item found = catalogue.findItem("Skateboard");
+                System.out.println("Hvad skal du finde?");
+                System.out.print("Indtast søgeord: ");
+                String searchingWord = scanner.next();
+                Item found = catalogue.findItem(searchingWord);
                 catalogue.borrowItem(found);
+                System.out.println("Nu er " + found + " er blevet lånt ud.");
             } else if (choice == 5) { // make item available again
                 // Hardcoded search criteria Skateboard
                 Item found = catalogue.findItem("Skateboard");
